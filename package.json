@@ -1,0 +1,17 @@
+{
+  "name": "@master-software/ejs-template-action",
+  "description": "Renders an EJS template",
+  "main": "lib/main.js",
+  "version": "1.0.0",
+  "scripts": {
+    "package": "ncc build ./src/main.js -m",
+    "create:tag": "git tag -a v$(cat package.json | jq -r '.version') -m v$(cat package.json | jq -r '.version') && git push --follow-tags"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "ejs": "^3.1.10"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.0"
+  }
+}

@@ -1,0 +1,21 @@
+name: Render EJS template
+description: Renders an EJS template
+
+inputs:
+  template-path:
+    description: Path to template file
+    required: true
+  json-data:
+    description: Data used as template input
+    required: true
+  output-path:
+    description: Path to output file
+    required: false
+
+outputs:
+  output:
+    description: Rendered template
+
+runs:
+  using: node20
+  main: dist/index.js
